@@ -110,7 +110,7 @@
         <div class="subject-box" onclick="selectSubject('직업')">직업</div>
         <div class="subject-box" onclick="selectSubject('동물')">동물</div>
       </div>
-      <div class="timer" id="timerDisplay">1분 30초</div>
+      <div class="timer" id="timerDisplay">3분 00초</div>
     </div>
     
     <!-- 메인 영역 -->
@@ -140,13 +140,13 @@
     let remainingPrompts = [];         // 이번 싸이클에 남은 제시어들
     let score = 0;                     // 넘긴 제시어 개수 (점수)
     let timer;                         // 타이머 interval 변수
-    let timeLeft = 90;                 // 90초 (1분 30초)
+    let timeLeft = 180;                // 180초 (3분)
     let gameStarted = false;           // 게임 시작 여부
 
     // 주제 박스를 클릭하면 호출 – 준비 화면 및 제시어 확인 버튼 표시 (준비 시에는 점수/시간 변화 없음)
     function selectSubject(subject) {
       clearInterval(timer);
-      timeLeft = 90;
+      timeLeft = 180;
       score = 0;
       gameStarted = false;
       updateScore();
@@ -230,7 +230,7 @@
       currentSubject = null;
       remainingPrompts = [];
       score = 0;
-      timeLeft = 90;
+      timeLeft = 180;
       gameStarted = false;
       document.getElementById('message').innerText = "";
       document.getElementById('promptButton').style.display = "none";
